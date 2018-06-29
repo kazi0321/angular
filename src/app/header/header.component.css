@@ -1,0 +1,26 @@
+div#header{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1500px;
+    height: 200px;
+    background-color: #84e6bd;
+
+}
+
+div#login{
+    top: 75px;
+    width: 185px;
+    font-size: 30px;
+    position: absolute;
+    left: 950px;
+    border: solid 3px #000000;
+}
+
+div#title{
+    top: 75px;    
+    font-size: 30px;
+    width: 1500px;
+    position: absolute;
+    left:  50px;
+}
