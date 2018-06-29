@@ -12,6 +12,7 @@ import { EditaComponent } from './edita/edita.component';
 import { DefaultTipComponent } from './default-tip/default-tip.component';
 import { UserTipComponent } from './user-tip/user-tip.component';
 import { OutputComponent } from './output/output.component';
+import { CoreComponent } from './core/core.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { OutputComponent } from './output/output.component';
     EditaComponent,
     DefaultTipComponent,
     UserTipComponent,
-    OutputComponent
+    OutputComponent,
+    CoreComponent
   ],
   imports: [
     BrowserModule,
