@@ -1,11 +1,12 @@
 
+
 import { MatButtonModule} from '@angular/material';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 import {  MatInputModule } from '@angular/material';import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginInfoComponent } from './login-info/login-info.component';
@@ -35,6 +36,7 @@ import { CoreComponent } from './core/core.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule, 
     AppRoutingModule,
      MatButtonModule,
     MatFormFieldModule,
