@@ -1,24 +1,42 @@
+import { BrowserModule } from '@angular/platform-browser';
 
+import { NgModule } from '@angular/core';
+
+
+
+import { AppComponent } from './app.component';
+
+
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import { UserTipComponent } from './user-tip/user-tip.component';
+
+import { OutputComponent } from './output/output.component';
+
+import { LoginInfoComponent } from './login-info/login-info.component';
+
+import { HeaderComponent } from './header/header.component';
+
+import { EditaComponent } from './edita/edita.component';
+
+import { DetailComponent } from './detail/detail.component';
+
+import { DefaultTipComponent } from './default-tip/default-tip.component';
+
+import { ChapterListComponent } from './chapter-list/chapter-list.component';
+
+import { ChapterComponent } from './chapter/chapter.component';
+
+import { InputComponent } from './input/input.component';
+
+import { AppRoutingModule } from './/app-routing.module';
 
 import { MatButtonModule} from '@angular/material';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 
-import {  MatInputModule } from '@angular/material';import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { LoginInfoComponent } from './login-info/login-info.component';
-import { ChapterComponent } from './chapter/chapter.component';
-import { ChapterListComponent } from './chapter-list/chapter-list.component';
-import { AppRoutingModule } from './/app-routing.module';
-import { DetailComponent } from './detail/detail.component';
-import { EditaComponent } from './edita/edita.component';
-import { DefaultTipComponent } from './default-tip/default-tip.component';
-import { UserTipComponent } from './user-tip/user-tip.component';
-import { OutputComponent } from './output/output.component';
-import { CoreComponent } from './core/core.component';
+import {  MatInputModule } from '@angular/material';
 
 @NgModule({
   declarations: [
