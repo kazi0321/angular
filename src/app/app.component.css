@@ -1,4 +1,13 @@
-div#main{
-    position: relative;
-    top: 250px;
+html{
+    width: auto;
+    height: 960px;
+    /* background-color: black; */
+}
+header{
+  height: 192px;
+  background-color: #84e6bd;
+}
+body{
+  height: 768px;
+  /* background-color: aqua; */
 }
