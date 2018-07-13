@@ -1,4 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
+
+import { MatButtonModule} from '@angular/material';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+import {  MatInputModule } from '@angular/material';import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -30,7 +35,10 @@ import { CoreComponent } from './core/core.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+     MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
