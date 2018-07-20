@@ -14,7 +14,7 @@ import { ChapterListComponent } from './chapter-list/chapter-list.component';
 import { ChapterComponent } from './chapter/chapter.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { MatButtonModule} from '@angular/material';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatFormFieldModule} from '@angular/material';
 import {  MatInputModule } from '@angular/material';
 
 @NgModule({
@@ -31,11 +31,14 @@ import {  MatInputModule } from '@angular/material';
     OutputComponent,
     CoreComponent
   ],
+  exports: [
+    MatInputModule
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule, 
     AppRoutingModule,
-     MatButtonModule,
+    MatButtonModule,
     MatFormFieldModule,
     MatInputModule 
   ],
