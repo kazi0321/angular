@@ -26,6 +26,13 @@ div.start {
     font-size: 250%;
     }
 
+div.back {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        font-size: 250%;
+    }
+
 a {
     border: solid 3px #000000;/*線*/
 }

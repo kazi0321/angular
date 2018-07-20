@@ -16,6 +16,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { MatButtonModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material';
 import {  MatInputModule } from '@angular/material';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {  MatInputModule } from '@angular/material';
     AppRoutingModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule 
+    MatInputModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
