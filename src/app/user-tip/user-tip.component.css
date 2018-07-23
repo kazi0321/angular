@@ -17,3 +17,5 @@
 .left { width: 74%; }
 
 .right { width: 25%; }
+
+.parent { overflow: hidden; }

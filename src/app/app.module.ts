@@ -17,6 +17,9 @@ import { MatButtonModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
 import { MatDividerModule } from '@angular/material';
+import { TutorComponent } from './tutor/tutor.component';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { PortalModule } from '@angular/cdk/portal';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { MatDividerModule } from '@angular/material';
     DefaultTipComponent,
     UserTipComponent,
     OutputComponent,
-    CoreComponent
+    CoreComponent,
+    TutorComponent
   ],
   exports: [
     MatInputModule
@@ -43,8 +47,11 @@ import { MatDividerModule } from '@angular/material';
     MatFormFieldModule,
     MatInputModule,
     MatDividerModule,
+    OverlayModule,
+    PortalModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [TutorComponent],
 })
 export class AppModule { }
