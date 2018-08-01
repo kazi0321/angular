@@ -20,6 +20,7 @@ import { MatDividerModule } from '@angular/material';
 import { TutorComponent } from './tutor/tutor.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { PortalModule } from '@angular/cdk/portal';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { PortalModule } from '@angular/cdk/portal';
     MatDividerModule,
     OverlayModule,
     PortalModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent],

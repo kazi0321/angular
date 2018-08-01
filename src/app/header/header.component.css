@@ -1,17 +1,17 @@
 
 div#login{
-    top: 75px;
+    top: 45px;
     /* width: 185px; */
     font-size: 30px;
     position: absolute;
-    left: 950px;
+    left: 1050px;
     border: solid 3px #000000;
 }
 
 div#title{
-    top: 75px;
+    top: 45px;
     font-size: 30px;
     /* width: 1500px; */
     position: absolute;
-    left:  50px;
+    left:  150px;
 }
