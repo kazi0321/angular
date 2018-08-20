@@ -2,8 +2,15 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tutor',
-  templateUrl: './tutor.component.html',
-  styleUrls: ['./tutor.component.css']
+  template: '',
+  styles: [
+    `:host {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+    }`
+  ]
 })
 export class TutorComponent implements OnInit {
 
