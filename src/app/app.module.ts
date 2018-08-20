@@ -17,10 +17,10 @@ import { MatButtonModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
 import { MatDividerModule } from '@angular/material';
-import { TutorComponent } from './tutor/tutor.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { PortalModule } from '@angular/cdk/portal';
 import { MatMenuModule } from '@angular/material/menu';
+import { TutorModule } from './tutor/tutor.module';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,6 @@ import { MatMenuModule } from '@angular/material/menu';
     UserTipComponent,
     OutputComponent,
     CoreComponent,
-    TutorComponent
   ],
   exports: [
     MatInputModule
@@ -50,10 +49,11 @@ import { MatMenuModule } from '@angular/material/menu';
     MatDividerModule,
     OverlayModule,
     PortalModule,
-    MatMenuModule
+    MatMenuModule,
+    TutorModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [TutorComponent],
+  entryComponents: [],
 })
 export class AppModule { }

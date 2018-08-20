@@ -1,20 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { Overlay } from '@angular/cdk/overlay';
-import { ComponentPortal } from '@angular/cdk/portal';
-import { TutorComponent } from '../tutor/tutor.component';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import {CdkOverlayOrigin} from '@angular/cdk/overlay';
+import { TutorService } from '../tutor/tutor.service';
 
 @Component({
   selector: 'app-core',
   templateUrl: './core.component.html',
   styleUrls: ['./core.component.css']
 })
-export class CoreComponent implements OnInit {
+export class CoreComponent implements OnInit, OnDestroy {
 
-  constructor(private overlay: Overlay) { }
+  @ViewChild(CdkOverlayOrigin) origin: CdkOverlayOrigin;
+
+  constructor(private tutor: TutorService) { }
 
   ngOnInit() {
-    const overlayRef = this.overlay.create();
-    overlayRef.attach(new ComponentPortal(TutorComponent));
+    this.tutor.attach(this.origin.elementRef);
+  }
+
+  ngOnDestroy() {
+    this.tutor.detach();
   }
 
 }
