@@ -10,7 +10,7 @@ import { LoginService } from '../login.service';
 })
 export class LoginInfoComponent implements OnInit {
   user = "Guest"
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
    this.loginService.isLoggedIn().subscribe(data => {})
