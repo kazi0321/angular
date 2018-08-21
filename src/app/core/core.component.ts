@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import {CdkOverlayOrigin} from '@angular/cdk/overlay';
 import { TutorService } from '../tutor/tutor.service';
+import { TutorComponent } from '../tutor/tutor.component';
 
 @Component({
   selector: 'app-core',
@@ -14,7 +15,7 @@ export class CoreComponent implements OnInit, OnDestroy {
   constructor(private tutor: TutorService) { }
 
   ngOnInit() {
-    this.tutor.attach(this.origin.elementRef);
+    this.tutor.attach(this.origin.elementRef, TutorComponent);
   }
 
   ngOnDestroy() {

@@ -1,22 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { TutorService } from './tutor.service';
 
 @Component({
   selector: 'app-tutor',
-  template: '',
-  styles: [
-    `:host {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-    }`
-  ]
+  templateUrl: './tutor.component.html',
+  styleUrls: ['./tutor.component.css']
 })
 export class TutorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private tutor: TutorService) { }
 
   ngOnInit() {
+  }
+
+  detach() {
+    this.tutor.detach();
   }
 
 }
