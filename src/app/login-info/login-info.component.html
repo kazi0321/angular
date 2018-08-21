@@ -1,5 +1,5 @@
-<button mat-button [matMenuTriggerFor]="menu">ログイン情報</button>
+<button mat-button [matMenuTriggerFor]="menu">{{user}}</button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item>ログアウト</button>
-  <button mat-menu-item>ログイン</button>
+  <button mat-menu-item ><a href="http://172.20.145.140/user/logout">ログアウト</a></button>
+  <button mat-menu-item><a href="http://172.20.145.140/user/login">ログイン</a></button>
 </mat-menu>

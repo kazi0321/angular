@@ -8,7 +8,7 @@ import {MatMenuModule} from '@angular/material/menu';
   styleUrls: ['./login-info.component.css']
 })
 export class LoginInfoComponent implements OnInit {
-
+  user = "Guest"
   constructor() { }
 
   ngOnInit() {
