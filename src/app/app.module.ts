@@ -17,6 +17,7 @@ import { MatButtonModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material';
 import {  MatInputModule } from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,9 +43,10 @@ import {MatMenuModule} from '@angular/material/menu';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
