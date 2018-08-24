@@ -15,11 +15,15 @@ export class CoreComponent implements OnInit, OnDestroy {
   constructor(private tutor: TutorService) { }
 
   ngOnInit() {
-    this.tutor.attach(this.origin.elementRef, TutorComponent);
+    // this.tutor.attach(this.origin.elementRef, TutorComponent);
   }
 
   ngOnDestroy() {
-    this.tutor.detach();
+    // this.tutor.detach();
+  }
+
+  openTutor() {
+    this.tutor.attach(this.origin.elementRef, TutorComponent);
   }
 
 }
