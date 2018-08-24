@@ -21,6 +21,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { PortalModule } from '@angular/cdk/portal';
 import { MatMenuModule } from '@angular/material/menu';
 import { TutorModule } from './tutor/tutor.module';
+import { HtmlSafePipe } from './pipe/html-safe.pipe';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { TutorModule } from './tutor/tutor.module';
     UserTipComponent,
     OutputComponent,
     CoreComponent,
+    HtmlSafePipe,
   ],
   exports: [
     MatInputModule
