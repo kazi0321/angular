@@ -19,7 +19,9 @@ export class CoreComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // this.tutor.detach();
+    if (this.tutor.isAttach) {
+      this.tutor.detach();
+    }
   }
 
   openTutor() {

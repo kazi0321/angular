@@ -8,6 +8,7 @@ import { ComponentPortal } from '@angular/cdk/portal';
 export class TutorService {
 
   private overlayRef: OverlayRef;
+  private attachFlg = false;
 
   constructor(private overlay: Overlay) { }
 
@@ -20,9 +21,16 @@ export class TutorService {
       )
     });
     this.overlayRef.attach(new ComponentPortal(component));
+    this.attachFlg = true;
   }
 
   public detach() {
     this.overlayRef.detach();
+    this.attachFlg = false;
   }
+
+  public get isAttach(): boolean {
+    return this.attachFlg;
+  }
+
 }

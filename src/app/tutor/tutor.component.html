@@ -1,3 +1,5 @@
-<div class="skip" (click)="detach()">Skip>>></div>
-<button class="modalBt prev">Prev</button>
-<button class="modalBt next">Next</button>
+<div class="host" [@feed]='feedState' (@feed.done)="detach()">
+  <div class="skip" (click)="detachAnimation()">Skip>>></div>
+  <button class="modalBt prev">Prev</button>
+  <button class="modalBt next">Next</button>
+</div>
