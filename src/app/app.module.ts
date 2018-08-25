@@ -22,6 +22,7 @@ import { PortalModule } from '@angular/cdk/portal';
 import { MatMenuModule } from '@angular/material/menu';
 import { TutorModule } from './tutor/tutor.module';
 import { HtmlSafePipe } from './pipe/html-safe.pipe';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -52,10 +53,11 @@ import { HtmlSafePipe } from './pipe/html-safe.pipe';
     OverlayModule,
     PortalModule,
     MatMenuModule,
-    TutorModule
+    TutorModule,
+    HttpClientModule
   ],
-  providers: [],
   bootstrap: [AppComponent],
   entryComponents: [],
+  providers: [ HttpClientModule],
 })
 export class AppModule { }
