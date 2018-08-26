@@ -19,6 +19,7 @@ import { ChapterListComponent } from './chapter-list/chapter-list.component';
 import { ChapterComponent } from './chapter/chapter.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { TutorModule } from './tutor/tutor.module';
+import { CustomTextareaModule } from './edita/custom-textarea/custom-textarea.module';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { TutorModule } from './tutor/tutor.module';
     PortalModule,
     MatMenuModule,
     TutorModule,
-    HttpClientModule
+    HttpClientModule,
+    CustomTextareaModule
   ],
   bootstrap: [AppComponent],
   entryComponents: [],
