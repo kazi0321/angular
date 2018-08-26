@@ -1,5 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatDividerModule, MatMenuModule } from '@angular/material';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { PortalModule } from '@angular/cdk/portal';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserTipComponent } from './user-tip/user-tip.component';
@@ -13,16 +18,7 @@ import { DefaultTipComponent } from './default-tip/default-tip.component';
 import { ChapterListComponent } from './chapter-list/chapter-list.component';
 import { ChapterComponent } from './chapter/chapter.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { MatButtonModule } from '@angular/material';
-import { MatFormFieldModule } from '@angular/material';
-import { MatInputModule } from '@angular/material';
-import { MatDividerModule } from '@angular/material';
-import { OverlayModule } from '@angular/cdk/overlay';
-import { PortalModule } from '@angular/cdk/portal';
-import { MatMenuModule } from '@angular/material/menu';
 import { TutorModule } from './tutor/tutor.module';
-import { HtmlSafePipe } from './pipe/html-safe.pipe';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,7 +33,6 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     UserTipComponent,
     OutputComponent,
     CoreComponent,
-    HtmlSafePipe,
   ],
   exports: [
     MatInputModule

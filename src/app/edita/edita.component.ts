@@ -14,7 +14,7 @@ export class EditaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.editorRows = 20;
+    this.editorRows = 10;
     this.lineFeedCode = '&#13;';
     this.editorInit = this.lineFeedCode.repeat(this.editorRows);
   }
