@@ -1,0 +1,15 @@
+<div class="">
+  <mat-list class="" >
+    <mat-list-item class="line"
+                   *ngFor="let line of text.text; let idx = index"
+                   [style.background-color]="text.getColor(idx)"
+                   (dragenter)="overColored(idx)"
+                   (dragleave)="leaveColored(idx)"
+                   (click)="initTextField($event, idx)">
+      <mat-chip *ngFor="let str of line"
+                draggable="true">{{ str }}
+      </mat-chip>
+      <input type="text" *ngIf="text.isInput(idx)">
+    </mat-list-item>
+  </mat-list>
+</div>
