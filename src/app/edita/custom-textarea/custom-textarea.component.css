@@ -5,3 +5,12 @@
 .line {
 
 }
+
+input {
+    height: 100%;
+}
+
+.editor {
+    display: flex;
+    flex-direction: row;
+}

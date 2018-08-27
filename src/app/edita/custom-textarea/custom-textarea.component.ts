@@ -9,24 +9,22 @@ import { CtStringsService } from './ct-strings.service';
 export class CustomTextareaComponent implements OnInit {
 
   @Input() lineColored: string;
+  private focusIdx: number;
 
   constructor(private text: CtStringsService) { }
 
   ngOnInit() {
-  }
-
-  private overColored(idx: number): void {
-    if (this.lineColored !== null) {
-      this.text.setColor(idx, this.lineColored);
-    }
-  }
-
-  private leaveColored(idx: number): void {
-    this.text.setColor(idx, 'white');
+    this.focusIdx = 0;
   }
 
   private initTextField(event: Event, idx: number): void {
-    this.text.reverseInputState(idx);
+    if (this.text.isInput(this.focusIdx)) {
+      this.text.reverseInputState(this.focusIdx);
+    }
+    this.focusIdx = idx;
+    if (!this.text.isInput(idx)) {
+      this.text.reverseInputState(idx);
+    }
   }
 
 }

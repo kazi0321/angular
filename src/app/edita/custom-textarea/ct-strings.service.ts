@@ -6,15 +6,12 @@ import { Injectable } from '@angular/core';
 export class CtStringsService {
 
   private texts: string[][];
-  private textsColor: string[];
   private inputStates: boolean[];
 
   constructor() {
     this.texts = [['assssssssssss'], [''], [''], [''], ['']];
-    this.textsColor = [];
     this.inputStates = [];
     this.texts.forEach(() => {
-      this.textsColor.push('white');
       this.inputStates.push(false);
     });
   }
@@ -25,14 +22,6 @@ export class CtStringsService {
 
   public get row(): number {
     return this.texts.length;
-  }
-
-  public getColor(row: number): string {
-    return this.textsColor[row];
-  }
-
-  public setColor(row: number, color: string): void {
-    this.textsColor[row] = color;
   }
 
   public isInput(row: number): boolean {
