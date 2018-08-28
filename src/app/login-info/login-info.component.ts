@@ -14,8 +14,10 @@ export class LoginInfoComponent implements OnInit {
   constructor(private loginService: LoginService) { }
 
   ngOnInit() {
-   this.loginService.isLoggedIn().subscribe(data => {})
-   
+   this.loginService.isLoggedIn().subscribe(data => {
+     this.user=data.username
+   })
+    
   }
   
 }
