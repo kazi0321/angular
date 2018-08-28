@@ -1,0 +1,46 @@
+.host {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .modalBt {
+    width: 250px;
+    height: 50px;
+    color: black;
+    background-color: white;
+    outline-color: white;
+    border-radius: 7px;
+    transition: .3s linear;
+  }
+
+  .modalBt:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0)  
+  }
+
+  .prev {
+      position: absolute;
+      top: 70%;
+      left: 20%;
+  }
+
+  .next {
+    position: absolute;
+    top: 70%;
+    right: 20%;
+  }
+
+  .skip {
+      color: rgba(255, 255, 255, .7);
+      transition: .3s linear;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+  }
+
+  .skip:hover {
+      color: white;
+  }

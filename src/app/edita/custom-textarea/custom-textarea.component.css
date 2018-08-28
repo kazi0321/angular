@@ -1,0 +1,32 @@
+.test {
+    background-color: chocolate;
+}
+
+.line {
+    width: 100%;
+}
+
+.editor {
+    display: flex;
+    flex-direction: row;
+}
+
+.inputCusor {
+    cursor: text;
+}
+
+.dragCusor {
+    cursor: pointer;
+}
+
+.flex { 
+    display: flex;
+}
+
+.rowNumber {
+    flex-grow: 0;
+}
+
+rowText {
+    flex-grow: 1;
+}

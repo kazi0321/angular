@@ -1,55 +1,28 @@
-button {
+.container { display: flex; }
 
-    position: absolute;
+.verLine { flex-direction: column; }
 
-    display: inline-block;
+.holLine { flex-direction: row; }
 
-    text-decoration: none;
+.max-width { width: 100%; }
 
-    background: #668ad8;
+.max-height { height: 100%; }
 
-    color: #FFF;
+.under { bottom: 0; }
 
-    border-bottom: solid 4px #627295;
+.relative { position: relative; }
 
-    border-radius: 2px;
+.absolute { position: absolute; }
 
-    width: 50px;
+.left { width: 74%; }
 
-    height: 30px;
+.right { width: 25%; }
 
-    right: 0;
+.parent { overflow: hidden; }
 
-    bottom: 0;
-
+.test {
+    background-color: aquamarine;
 }
 
-
-
-mat-form-field {
-
-    position: absolute;
-
-    width: 160px;
-
-    height: 30px;
-
-    bottom: 16px;
-
-    right: 90px;
-
-}
-
-
-
-form {
-
-    position: relative;
-
-    border : solid 1px #333 ;
-
-    width: auto;
-
-    height: 285px;
-
+.createBt {
 }

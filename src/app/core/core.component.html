@@ -1,9 +1,22 @@
-
-<div class="all">
-  <div class ="ue">
-    <div class="input"><app-edita></app-edita></div><div class="potetotip"><app-default-tip></app-default-tip><app-user-tip></app-user-tip></div>
+<div cdkOverlayOrigin class="container verLine max-width max-height">
+  <div class="container holLine upper space-col">
+    <app-edita class="left space-row"></app-edita>
+    <mat-divider [vertical]="true"></mat-divider>
+    <div class="container verLine right space-row">
+      <app-default-tip class="bottom space-col"></app-default-tip>
+      <mat-divider></mat-divider>
+      <app-user-tip class="upper space-col"></app-user-tip>
+    </div>
   </div>
-  <div class ="sita">
-    <div class="output"><app-output></app-output></div><div class ="core">core</div>
+  <mat-divider></mat-divider>
+  <div class="container holLine space-col">
+    <app-output class="left space-row"></app-output>
+    <mat-divider [vertical]="true"></mat-divider>
+    <div class="container verLine right space-row">
+      <button mat-raised-button>実行</button>
+      <button mat-raised-button>クリア</button>
+      <button mat-raised-button>編集</button>
+      <button mat-raised-button (click)="openTutor()">チュートリアル</button>
+    </div>
   </div>
 </div>

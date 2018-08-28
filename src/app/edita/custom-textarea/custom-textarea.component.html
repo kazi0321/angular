@@ -1,0 +1,15 @@
+<div class="editor">
+  <mat-list class="rowNumber">
+    <mat-list-item class="line" *ngFor="let line of text.text; let idx = index">
+      {{ idx + 1 }}
+    </mat-list-item>
+  </mat-list>
+  &nbsp;
+  <mat-list class="inputCusor line">
+    <mat-list-item class="line" *ngFor="let line of text.text; let idx = index" (click)="initTextField($event, idx)">
+      <mat-chip class="dragCusor" *ngFor="let str of line" draggable="true">{{ str }}</mat-chip>
+      &nbsp;
+      <input type="text" *ngIf="text.isInput(idx)" (keyup.enter)="enter($event, idx)">
+    </mat-list-item>
+  </mat-list>
+</div>
