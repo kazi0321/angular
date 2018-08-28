@@ -24,6 +24,10 @@ export class CtStringsService {
     return this.texts.length;
   }
 
+  public add(row: number, word: string): void {
+    this.texts[row].push(word);
+  }
+
   public isInput(row: number): boolean {
     return this.inputStates[row];
   }
