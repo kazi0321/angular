@@ -13,7 +13,7 @@ export class CustomTextareaComponent implements OnInit {
   @Input() lineColored: string;
   private focusIdx: number;
 
-  constructor(private text: CtStringsService) { }
+  constructor(public text: CtStringsService) { }
 
   ngOnInit() {
     this.focusIdx = 0;
