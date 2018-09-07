@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CustomTextareaComponent } from './custom-textarea.component';
 import { MatChipsModule, MatListModule, MatIconModule } from '@angular/material';
 import {CtStringsService} from './ct-strings.service';
+import {ContinuousIDService} from './continuous-id.service';
 
 @NgModule({
   imports: [
@@ -12,7 +13,10 @@ import {CtStringsService} from './ct-strings.service';
     MatIconModule,
   ],
   declarations: [CustomTextareaComponent],
-  providers: [CtStringsService],
+  providers: [
+    CtStringsService,
+    ContinuousIDService,
+  ],
   exports: [
     CustomTextareaComponent,
   ]
