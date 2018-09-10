@@ -8,7 +8,7 @@ export class CtStringsService {
   private text: string[][];
 
   constructor() {
-    this.text = [['assssssssssss', 'assssssssssss', 'assssssssssss'], ['z'], ['x'], ['v'], ['b']];
+    this.text = [[], [], [], [], []];
   }
 
   public getWord(row: number, col: number): string {
@@ -36,11 +36,20 @@ export class CtStringsService {
     return this.text[y].splice(x, 0);
   }
 
+  public pop(row: number): string {
+    const last = this.text[row].length - 1;
+    return this.text[row].splice(last, 1)[0];
+  }
+
   public exchange(lY, lX, rY, rX): void {
     const l = this.text[lY].splice(lX, 1)[0];
     const r = this.text[rY].splice(rX, 1)[0];
     this.text[lY].splice(lX, 0, r);
     this.text[rY].splice(rX, 0, l);
+  }
+
+  public isEmpty(row: number): boolean {
+    return this.text[row].length === 0;
   }
 
 }

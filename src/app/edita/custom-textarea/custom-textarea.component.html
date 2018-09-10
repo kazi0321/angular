@@ -8,7 +8,7 @@
       aria-orientation="horizontal">
       &nbsp;&nbsp;
       <mat-chip class="dragCusor" *ngFor="let str of line" draggable="true">{{ str }}</mat-chip>
-      <input [id]="idService.get(tfKey, idx)" type="text" (input)="onInput($event, idx)" (keydown)="keyEvent($event, idx)">
+      <input [id]="idService.get(tfKey, idx)" type="text" (input)="tfSizing(idx)" (keydown)="keyEvent($event, idx)">
     </mat-chip-list>
   </div>
 </div>

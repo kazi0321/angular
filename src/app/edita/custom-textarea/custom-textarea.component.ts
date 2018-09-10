@@ -31,7 +31,7 @@ export class CustomTextareaComponent implements OnInit {
    * @param event イベント
    * @param idx 行番号
    */
-  private focusTF(event, idx: number): void {
+  public focusTF(event, idx: number): void {
     document.getElementById(this.idService.get(this.tfKey, idx)).focus();
   }
 
@@ -41,7 +41,7 @@ export class CustomTextareaComponent implements OnInit {
    * @param event
    * @param idx 行番号
    */
-  private keyEvent(event, idx: number): void {
+  public keyEvent(event, idx: number): void {
     switch (event.keyCode) {
       case KeyCode.Enter:
         this.onEnter(event, idx);
@@ -49,34 +49,59 @@ export class CustomTextareaComponent implements OnInit {
       case KeyCode.BackSpace:
         this.onBackSpace(event, idx);
         break;
+      case KeyCode.Space:
+        this.onSpace(event, idx);
+        break;
       default:
         break;
     }
   }
-  private onEnter(event, idx: number): void {
+  public onEnter(event, idx: number): void {
+    this.onSpace(event, idx);
     if (event.target.value === STR.EMPTY) {
       this.text.body.splice(idx + 1, 0, []);
-      document.getElementById(this.idService.get(this.tfKey, idx + 1)).focus();
-    } else {
+      const idIdx = this.idService.get(this.tfKey, idx + 1);
+      document.getElementById(idIdx).focus();
+    }
+  }
+  public onBackSpace(event, idx: number): void {
+    const tf = this.getInputElement(idx);
+
+    if (tf.selectionStart === 0) {
+      const value = this.text.isEmpty(idx) ? STR.EMPTY : this.text.pop(idx);
+      console.log(`left: ${value}`);
+      console.log(`right: ${tf.value}`);
+      tf.value = `${value}${tf.value}`;
+      console.log(tf.value);
+      this.tfSizing(idx);
+    }
+  }
+  public onSpace(event, idx: number): void {
+    event.target.value = event.target.value.replace(/( |　)+/, STR.EMPTY);
+    if (event.target.value !== STR.EMPTY) {
       this.text.add(idx, event.target.value);
       event.target.value = STR.EMPTY;
-      const tf = <HTMLInputElement>document.getElementById(this.idService.get(this.tfKey, idx));
-      tf.size = getBytes(tf.value.length) + 1;
-    }
-  }
-  private onBackSpace(event, idx: number): void {
-    if (event.target.value === STR.EMPTY && this.text.body[idx].length !== 0) {
-      const str = this.text.body[idx].pop();
-      const tf = <HTMLInputElement>document.getElementById(this.idService.get(this.tfKey, idx));
-      tf.value = str;
-      tf.size = getBytes(tf.value.length) + 1;
+      this.tfSizing(idx);
     }
   }
 
 
-  private onInput(event, idx) {
-    const tf = <HTMLInputElement>document.getElementById(this.idService.get(this.tfKey, idx));
+  /**
+   * 指定インデックスのテキストフォールドの可視長を入力文字列にラップする
+   * @param idx
+   */
+  public tfSizing(idx: number): void {
+    const tf = this.getInputElement(idx);
     tf.size = getBytes(tf.value) + 1;
+  }
+
+
+  /**
+   * 指定インデックスのテキストフィールドのエレメントを返す
+   * @param idx
+   */
+  public getInputElement(idx): HTMLInputElement {
+    return <HTMLInputElement>document.getElementById(this.idService.get(this.tfKey, idx));
   }
 
 

@@ -41,10 +41,10 @@ export class ContinuousIDService {
   /**
    *
    * @param key
-   * @param idx
    */
-  public remove(key: string, idx: number): void {
-    this.ids[key].splice(idx, 1);
+  public pop(key: string): string {
+    const last = this.ids[key].length - 1;
+    return this.ids[key].splice(last, 1)[0];
   }
 
   /**

@@ -7,6 +7,7 @@ export const getBytes = (str) => unescape(encodeURIComponent(str)).length;
 export enum KeyCode {
     Enter = 13,
     BackSpace = 8,
+    Space = 32,
 }
 
 export enum STR {
