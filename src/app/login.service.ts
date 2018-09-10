@@ -17,6 +17,6 @@ export class LoginService {
   constructor(private http:HttpClient) { }
 
   isLoggedIn(): Observable<isLoggedIn> {
-    return this.http.get<isLoggedIn>('http://172.20.145.140/api/isloggedin.php')
+    return this.http.get<isLoggedIn>('/api/isloggedin.php')
   }
 }
