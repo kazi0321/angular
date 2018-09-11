@@ -1,5 +1,4 @@
 <button mat-button [matMenuTriggerFor]="menu">{{user}}</button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item ><a href="http://172.20.145.140/user/logout">ログアウト</a></button>
-  <button mat-menu-item><a href="http://172.20.145.140/user/login">ログイン</a></button>
+   <button *ngFor="let menuList of menuLists;let i = index"  mat-menu-item ><a href={{menuList.url}}>{{menuList.title}}</a></button>
 </mat-menu>
