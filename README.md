@@ -4,15 +4,18 @@
 右上のフォークボタンから
 
 ## fetchの仕方
-リモートリポジトリの追加、初回のみ 
+リモートリポジトリの追加、初回のみ
+
 `git remote add upstream https://github.com/kazi0321/angular.git`
 
 以下は開発するにあたり、リモートリポジトリとの差分を埋めるために最初に毎回行ってほしい
-`git fetch upstream master` 
+`git fetch upstream master`
+ 
 `git merge upstream/master`
 
 ## pullrequest
-`ng serve` で確認したのちpullrequestを作成してください。 
+`ng serve` で確認したのちpullrequestを作成してください。
+ 
 そのときできるだけ分かりやすくコメントするとかじさんがたすかります。
 
 
