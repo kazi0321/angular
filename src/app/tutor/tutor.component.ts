@@ -20,7 +20,7 @@ export class TutorComponent implements OnInit, AfterViewInit {
   private IN = 'in';
   private OUT = 'out';
 
-  private feedState = this.OUT;
+  feedState = this.OUT;
 
   constructor(private tutor: TutorService) { }
 

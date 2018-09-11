@@ -5,40 +5,51 @@ import { Injectable } from '@angular/core';
 })
 export class CtStringsService {
 
-  private texts: string[][];
-  private inputStates: boolean[];
+  private text: string[][];
 
   constructor() {
-    this.texts = [['assssssssssss'], [''], [''], [''], ['']];
-    this.inputStates = [];
-    this.texts.forEach(() => {
-      this.inputStates.push(false);
-    });
+    this.text = [[], [], [], [], []];
   }
 
-  public get text(): string[][] {
-    return this.texts;
+  public getWord(row: number, col: number): string {
+    return this.text[row][col];
   }
 
   public get row(): number {
-    return this.texts.length;
+    return this.text.length;
   }
+
+  public col(row: number): number {
+    return this.text[row].length;
+  }
+
 
   public add(row: number, word: string): void {
-    this.texts[row].push(word);
+    this.text[row].push(word);
   }
 
-  public isInput(row: number): boolean {
-    return this.inputStates[row];
+  public get body() {
+    return this.text;
   }
 
-  public reverseInputState(row: number) {
-    this.inputStates[row] = !this.inputStates[row];
+  public draw(y: number, x: number) {
+    return this.text[y].splice(x, 0);
   }
 
-  public get code(): string {
-    return '';
+  public pop(row: number): string {
+    const last = this.text[row].length - 1;
+    return this.text[row].splice(last, 1)[0];
   }
 
+  public exchange(lY, lX, rY, rX): void {
+    const l = this.text[lY].splice(lX, 1)[0];
+    const r = this.text[rY].splice(rX, 1)[0];
+    this.text[lY].splice(lX, 0, r);
+    this.text[rY].splice(rX, 0, l);
+  }
+
+  public isEmpty(row: number): boolean {
+    return this.text[row].length === 0;
+  }
 
 }

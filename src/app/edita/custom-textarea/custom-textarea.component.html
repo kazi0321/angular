@@ -1,15 +1,15 @@
-<div class="editor">
-  <mat-list class="rowNumber">
-    <mat-list-item class="line" *ngFor="let line of text.text; let idx = index">
-      {{ idx + 1 }}
-    </mat-list-item>
-  </mat-list>
-  &nbsp;
-  <mat-list class="inputCusor line">
-    <mat-list-item class="line" *ngFor="let line of text.text; let idx = index" (click)="initTextField($event, idx)">
+<div class="flex editor">
+  <div class="flex numbers">
+    <div class="number" *ngFor="let line of text.body; let idx = index">{{ idx + 1 }}</div>
+  </div>
+  <mat-divider id="n2t" class="divider" [vertical]="true"></mat-divider>
+  <div class="flex textarea">
+    <mat-chip-list class="flex line" *ngFor="let line of text.body; let idx = index" (click)="focusTF($event, idx)"
+      aria-orientation="horizontal">
+      &nbsp;&nbsp;
       <mat-chip class="dragCusor" *ngFor="let str of line" draggable="true">{{ str }}</mat-chip>
-      &nbsp;
-      <input type="text" *ngIf="text.isInput(idx)" (keyup.enter)="enter($event, idx)">
-    </mat-list-item>
-  </mat-list>
+      <input [id]="idService.get(tfKey, idx)" type="text" (input)="tfSizing(idx)" (keydown)="keyEvent($event, idx)">
+    </mat-chip-list>
+  </div>
 </div>
+

@@ -12,7 +12,8 @@ import { menuList } from '../menu-list';
 })
 
 export class LoginInfoComponent implements OnInit {
-  user = "Guest"
+
+user = "Guest"
   menuLists = []
 
   constructor(private loginService: LoginService) { }
@@ -38,3 +39,4 @@ export class LoginInfoComponent implements OnInit {
     }
   }
 }
+
