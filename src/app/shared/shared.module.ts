@@ -9,6 +9,11 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  declarations: []
+  declarations: [],
+  exports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+  ]
 })
 export class SharedModule { }

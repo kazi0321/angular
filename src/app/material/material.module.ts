@@ -21,6 +21,15 @@ import { PortalModule } from '@angular/cdk/portal';
     OverlayModule,
     PortalModule,
   ],
-  declarations: []
+  declarations: [],
+  exports: [
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDividerModule,
+    MatMenuModule,
+    OverlayModule,
+    PortalModule,
+  ]
 })
 export class MaterialModule { }
