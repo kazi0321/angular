@@ -7,19 +7,14 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UserTipComponent } from './user-tip/user-tip.component';
-import { OutputComponent } from './output/output.component';
-import { CoreComponent } from './core/core.component';
 import { LoginInfoComponent } from './login-info/login-info.component';
 import { HeaderComponent } from './header/header.component';
-import { EditaComponent } from './edita/edita.component';
 import { DetailComponent } from './detail/detail.component';
-import { DefaultTipComponent } from './default-tip/default-tip.component';
 import { ChapterListComponent } from './chapter-list/chapter-list.component';
 import { ChapterComponent } from './chapter/chapter.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { TutorModule } from './tutor/tutor.module';
-import { CustomTextareaModule } from './edita/custom-textarea/custom-textarea.module';
+import { CoreComponent } from './core/core.component';
+
 
 @NgModule({
   declarations: [
@@ -29,10 +24,6 @@ import { CustomTextareaModule } from './edita/custom-textarea/custom-textarea.mo
     ChapterComponent,
     ChapterListComponent,
     DetailComponent,
-    EditaComponent,
-    DefaultTipComponent,
-    UserTipComponent,
-    OutputComponent,
     CoreComponent,
   ],
   exports: [
@@ -49,9 +40,7 @@ import { CustomTextareaModule } from './edita/custom-textarea/custom-textarea.mo
     OverlayModule,
     PortalModule,
     MatMenuModule,
-    TutorModule,
-    HttpClientModule,
-    CustomTextareaModule
+    HttpClientModule
   ],
   bootstrap: [AppComponent],
   entryComponents: [],
