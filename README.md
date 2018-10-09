@@ -1,7 +1,10 @@
 # 使い方
 
 ## 自分のリポジトリにフォークする
-右上のフォークボタンから
+[親リポジトリの](https://github.com/kazi0321/angular)右上のフォークボタンから
+
+## ローカルにクローンする
+`git clone https://github.com/~~yourusername~~/angular.git`
 
 ## fetchの仕方
 リモートリポジトリの追加、初回のみ
