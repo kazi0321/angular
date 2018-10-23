@@ -14,6 +14,8 @@ import { ChapterListComponent } from './chapter-list/chapter-list.component';
 import { ChapterComponent } from './chapter/chapter.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { CoreComponent } from './core/core.component';
+import { DefaultTipComponent } from './default-tip/default-tip.component';
+import { OutputComponent } from './output/output.component';
 
 
 @NgModule({
@@ -25,6 +27,8 @@ import { CoreComponent } from './core/core.component';
     ChapterListComponent,
     DetailComponent,
     CoreComponent,
+    DefaultTipComponent,
+    OutputComponent,
   ],
   exports: [
     MatInputModule
