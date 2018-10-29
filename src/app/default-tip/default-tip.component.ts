@@ -64,31 +64,31 @@ export class DefaultTipComponent implements OnInit {
 
     }
 
-    function handleDrop(e) {
+    // function handleDrop(e) {
 
-      // this / e.target is current target element.
+    //   // this / e.target is current target element.
 
-      if (e.stopPropagation) {
+    //   if (e.stopPropagation) {
 
-        e.stopPropagation(); // stops the browser from redirecting.
+    //     e.stopPropagation(); // stops the browser from redirecting.
 
-      }
+    //   }
 
-      if (dragSrcEl !== this) {
+    //   if (dragSrcEl !== this) {
 
-        // Set the source column's HTML to the HTML of the columnwe dropped on.
+    //     // Set the source column's HTML to the HTML of the columnwe dropped on.
 
-        dragSrcEl.innerHTML = this.innerHTML;
+    //     dragSrcEl.innerHTML = this.innerHTML;
 
-        this.innerHTML = e.dataTransfer.getData('text/html');
+    //     this.innerHTML = e.dataTransfer.getData('text/html');
 
-      }
+    //   }
 
 
 
-      return false;
+    //   return false;
 
-    }
+    // }
 
 
 
@@ -108,7 +108,7 @@ export class DefaultTipComponent implements OnInit {
 
 
     let cols = null;
-    cols = document.querySelectorAll('#columns .column');
+    cols = document.querySelectorAll('#columns .column ');
 
     [].forEach.call(cols, function (col) {
 
@@ -120,7 +120,7 @@ export class DefaultTipComponent implements OnInit {
 
       col.addEventListener('dragleave', handleDragLeave, false);
 
-      col.addEventListener('drop', handleDrop, false);
+      // col.addEventListener('drop', handleDrop, false);
 
       col.addEventListener('dragend', handleDragEnd, false);
 
