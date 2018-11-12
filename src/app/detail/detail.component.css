@@ -10,28 +10,30 @@ div.syou {
     position: relative;
     }
 p.title{
-    text-align: left;
+    text-align: center;
     font-size: 250%;
 }
 
 p.setumei{
     text-align: left;
-    font-size: 250%;
+    font-size: 180%;
 }
 
-div.start {
+div.start button{
     position: absolute;
     right: 0;
     bottom: 0;
     font-size: 250%;
+    font-weight:bold;
     }
 
-div.back {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        font-size: 250%;
-    }
+div.back button{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 250%;
+    font-weight:bold;
+}
 
 a {
     border: solid 3px #000000;/*線*/

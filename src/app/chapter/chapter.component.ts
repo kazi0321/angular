@@ -17,15 +17,15 @@ export class ChapterComponent implements OnInit {
 
   ngOnInit() {
     this.chapterLists=[
-      new chapterList('１','説明'),
+      new chapterList('プログラムで文字や数字を表示させよう','こんにちはキッズたち！プログラムがわからない君たちにこれからプログラミングを教えていくよ！まずは初歩の初歩、画面上に文字や数字を表示させることを教えるよ！'),
       new chapterList('２','説明'),
       new chapterList('３','説明')
     ]
   }
 
-  openDetail(): void {
+  openDetail(i): void {
     const dialogRef = this.dialog.open(DetailComponent, {
-      data: chapterList
+      data: this.chapterLists[i]
     });
 
     dialogRef.afterClosed().subscribe(result => {
