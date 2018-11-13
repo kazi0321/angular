@@ -13,13 +13,11 @@ export class OutputComponent implements OnInit {
   ngOnInit() {
     this.drag();
   }
-
   drag() {
 
     let dragSrcEl = null;
 
     function handleDragStart(e) {
-
 
       dragSrcEl = this;
 
@@ -65,7 +63,6 @@ export class OutputComponent implements OnInit {
 
     function handleDrop(e) {
 
-
       // this / e.target is current target element.
 
       if (e.stopPropagation) {
@@ -77,11 +74,9 @@ export class OutputComponent implements OnInit {
       if (dragSrcEl !== this) {
 
         // Set the source column's HTML to the HTML of the columnwe dropped on.
+        var text = document.getElementById("textarea");
 
-        // dragSrcEl.innerHTML = this.innerHTML;
-        let textarea = null;
-        textarea = document.getElementById('textarea');
-        textarea.innerHTML = textarea.innerHTML + e.dataTransfer.getData('text/html');
+        text.innerHTML = text.innerHTML + e.dataTransfer.getData('text/html');
 
       }
 
@@ -108,7 +103,7 @@ export class OutputComponent implements OnInit {
 
 
     let cols = null;
-    cols = document.querySelectorAll('#textarea');
+    cols = document.querySelectorAll('#textarea ');
 
     [].forEach.call(cols, function (col) {
 
@@ -127,17 +122,6 @@ export class OutputComponent implements OnInit {
     });
 
   }
-
-  keypress(event) {
-    let a = null;
-    a = event.target.value;
-    a = 'aaa';
-    console.log(a);
-  }
- myCtrl ($scope) {
-    let data = null ;
-    data = $scope.data ;
-    console.log(data);
 }
 
-}
+
