@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { MatChipInputEvent } from '@angular/material';
+
+export interface Test {
+  name: string;
+}
 
 @Component({
   selector: 'app-output',
@@ -10,14 +16,50 @@ export class OutputComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.drag();
-    
+    this.add;
+    this.remove;
+    // this.drag();
   }
+
+  visible = true;
+  selectable = true;
+  removable = true;
+  addOnBlur = true;
+  readonly separatorKeysCodes: number[] = [ENTER, COMMA];
+  tests: Test[] = [
+    { name: 'test' },
+  ];
+
+  add(event: MatChipInputEvent): void {
+    const input = event.input;
+    const value = event.value;
+
+    // Add our test
+    if ((value || '').trim()) {
+      this.tests.push({ name: value.trim() });
+    }
+
+    // Reset the input value
+    if (input) {
+      input.value = '';
+    }
+  }
+
+  remove(test: Test): void {
+    const index = this.tests.indexOf(test);
+
+    if (index >= 0) {
+      this.tests.splice(index, 1);
+    }
+  }
+
   drag() {
 
     let dragSrcEl = null;
 
     function handleDragStart(e) {
+
+      this.style.opacity = '0.5';  // this / e.target is the source node.
 
       dragSrcEl = this;
 
@@ -74,9 +116,10 @@ export class OutputComponent implements OnInit {
       if (dragSrcEl !== this) {
 
         // Set the source column's HTML to the HTML of the columnwe dropped on.
-        var text = document.getElementById("textarea");
 
-        text.innerHTML = text.innerHTML + e.dataTransfer.getData('text/html');
+        dragSrcEl.innerHTML = this.innerHTML;
+
+        this.innerHTML = e.dataTransfer.getData('text/html');
 
       }
 
@@ -92,6 +135,7 @@ export class OutputComponent implements OnInit {
 
       // this/e.target is the source node.
 
+      this.style.opacity = '1.0';
 
       [].forEach.call(cols, function (col) {
 
@@ -103,7 +147,7 @@ export class OutputComponent implements OnInit {
 
 
     let cols = null;
-    cols = document.querySelectorAll('#textarea ');
+    cols = document.querySelectorAll('.test');
 
     [].forEach.call(cols, function (col) {
 

@@ -1,3 +1,17 @@
-<mat-form-field>
+<!-- <mat-form-field>
     <textarea id="textarea" ng-controller="controll" matInput placeholder="Textarea"></textarea>
+</mat-form-field> -->
+<!-- <div><textarea id="textarea" ng-controller="controll"></textarea></div> -->
+<!-- <div class=test></div> -->
+<p style="clear:right;"></p>
+<mat-form-field class="example-chip-list">
+    <mat-chip-list #chipList>
+            <div class=test>
+        <mat-chip *ngFor="let test of tests" [selectable]="selectable" [removable]="removable" (removed)="remove(test)" draggable="true">
+            {{test.name}}
+            <mat-icon matChipRemove *ngIf="removable">×</mat-icon>
+        </mat-chip></div>
+        <input placeholder="New" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)">
+    </mat-chip-list>
 </mat-form-field>

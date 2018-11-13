@@ -14,6 +14,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { EditorModule } from './editor/editor.module';
 import { MaterialModule } from './material/material.module';
 import { SharedModule } from './shared/shared.module';
+import { MatIconModule,MatChipsModule } from '@angular/material';
 
 
 @NgModule({
@@ -33,6 +34,8 @@ import { SharedModule } from './shared/shared.module';
     EditorModule,
     MaterialModule,
     SharedModule,
+    MatChipsModule,
+    MatIconModule,
   ],
   bootstrap: [AppComponent],
   entryComponents: [],
