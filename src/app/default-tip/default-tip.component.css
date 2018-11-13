@@ -7,8 +7,8 @@
   -khtml-user-drag: element;
   -webkit-user-drag: element;
 }
-.column {
-  height: 150px;
+/* .column {
+  height: 40px;
   width: 150px;
   float: left;
   border: 2px solid #666666;
@@ -24,7 +24,7 @@
   text-align: center;
   cursor: move;
 }
-.column header {
+.column  {
   color: #fff;
   text-shadow: #000 0 1px;
   box-shadow: 5px;
@@ -45,9 +45,17 @@
   -ms-border-top-right-radius: 10px;
   -moz-border-radius-topright: 10px;
   border-top-right-radius: 10px;
-}
+} */
 .column.over {
   border: 2px dashed #000;
+}
+#default-tip{
+  width: 30%;
+  height: 100px;
+  position: absolute;
+  top: 140px;
+  right: 5px;
+  border: solid 1px black;
 }
 
  
