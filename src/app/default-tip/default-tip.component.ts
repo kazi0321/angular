@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class DefaultTipComponent implements OnInit {
 
   constructor() { }
-  test = 'while';
 
   ngOnInit() {
     this.drag();
