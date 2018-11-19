@@ -1,18 +1,10 @@
-[draggable] {
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  -khtml-user-drag: element;
-  -webkit-user-drag: element;
+.test{
+  height: 210px;
+  width: 99%;
+  border: solid 1px black;
+  position: absolute;
+  top: 660px;
 }
-div#textarea{
-  border:  solid #000;
-  height: 500px;
-  width: 500px;
-  float: right;
+p{
+  margin : 5px;
 }
- 
-
-
-  

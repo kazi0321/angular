@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Testability } from '@angular/core';
 
-
+export interface Output {
+  name: string,
+}
 @Component({
   selector: 'app-output',
   templateUrl: './output.component.html',
@@ -8,119 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OutputComponent implements OnInit {
 
+  outputs: Output[] = [
+    { name: '' },
+  ];
+
+  tests;
+  value = 0;
+  mode = "determinate";
   constructor() { }
 
   ngOnInit() {
-    this.drag();
+    // this.result();
   }
-  drag() {
-
-    let dragSrcEl = null;
-
-    function handleDragStart(e) {
-
-      dragSrcEl = this;
-
-      e.dataTransfer.effectAllowed = 'move';
-
-      e.dataTransfer.setData('text/html', this.innerHTML);
-
+  result() {
+    this.outputs = []; //一回空にする処理(出来ているのか怪しい)
+    let json_text = '{ "a" : 100, "b" : 200, "c" : 300 }';
+    this.tests = JSON.parse(json_text);
+    for (this.tests.key in this.tests) {
+      this.outputs.push({ name: this.tests[this.tests.key] });
     }
-
-
-
-    function handleDragOver(e) {
-
-      if (e.preventDefault) {
-
-        e.preventDefault(); // Necessary. Allows us to drop.
-
-      }
-
-      e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
-
-      return false;
-
-    }
-
-
-
-    function handleDragEnter(e) {
-
-      // this / e.target is the current hover target.
-
-      this.classList.add('over');
-
-    }
-
-
-
-    function handleDragLeave(e) {
-
-      this.classList.remove('over');  // this / e.target is previous target element.
-
-    }
-
-    function handleDrop(e) {
-
-      // this / e.target is current target element.
-
-      if (e.stopPropagation) {
-
-        e.stopPropagation(); // stops the browser from redirecting.
-
-      }
-
-      if (dragSrcEl !== this) {
-
-        // Set the source column's HTML to the HTML of the columnwe dropped on.
-        var text = document.getElementById("textarea");
-
-        text.innerHTML = text.innerHTML + e.dataTransfer.getData('text/html');
-
-      }
-
-
-
-      return false;
-
-    }
-
-
-
-    function handleDragEnd(e) {
-
-      // this/e.target is the source node.
-
-
-      [].forEach.call(cols, function (col) {
-
-        col.classList.remove('over');
-
-      });
-
-    }
-
-
-    let cols = null;
-    cols = document.querySelectorAll('#textarea ');
-
-    [].forEach.call(cols, function (col) {
-
-      col.addEventListener('dragstart', handleDragStart, false);
-
-      col.addEventListener('dragenter', handleDragEnter, false);
-
-      col.addEventListener('dragover', handleDragOver, false);
-
-      col.addEventListener('dragleave', handleDragLeave, false);
-
-      col.addEventListener('drop', handleDrop, false);
-
-      col.addEventListener('dragend', handleDragEnd, false);
-
-    });
-
   }
 }
 

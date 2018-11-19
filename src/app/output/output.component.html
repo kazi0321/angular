@@ -1,3 +1,9 @@
-<mat-form-field>
-    <textarea id="textarea" ng-controller="controll" matInput placeholder="Textarea"></textarea>
-</mat-form-field>
+<button (click)="result()" >実行</button>
+
+<div class=test>
+    <mat-progress-bar mode={{mode}}  value={{value}}></mat-progress-bar>
+    <p *ngFor="let output of outputs">{{output.name}}</p>
+</div>
+<!-- <div class=test *ngFor="let test of tests">
+    <p>{{output.name}}</p>
+</div> -->
