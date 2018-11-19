@@ -1,32 +1,10 @@
-[draggable] {
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  -khtml-user-drag: element;
-  -webkit-user-drag: element;
-}
-div#textarea{
-  border:  solid rgb(0, 0, 0);
-  height: 500px;
-  width: 500px;
-  float: right;
-}
-.example-chip-list {
-  width: 100%;
-  height: 400px;
-  width: 400px;
-  float: right;
-}
 .test{
-  border:  solid rgb(0, 0, 0);
-  width: 100%;
-  height:400px;
-  width: 400px;
-  float: right;
+  height: 210px;
+  width: 99%;
+  border: solid 1px black;
+  position: absolute;
+  top: 660px;
 }
-
- 
-
-
-  
+p{
+  margin : 5px;
+}
