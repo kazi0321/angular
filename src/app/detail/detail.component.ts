@@ -19,6 +19,7 @@ export class DetailComponent implements OnInit {
 }
 
 export interface DetailData {
+  chapterID:string;
   title: string;
-  detail: string;
+  description: string;
 }

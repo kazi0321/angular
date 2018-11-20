@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DetailComponent } from '../detail/detail.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {DataService} from '../data.service';
+import { ArrayDataSource } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-chapter',
@@ -9,18 +11,17 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 })
 export class ChapterComponent implements OnInit {
   log: string;
-  chapterLists=[]  
+  chapterLists=[]
 
   constructor(
       public dialog: MatDialog,
+      private DataService: DataService,
   ) { }
 
   ngOnInit() {
-    this.chapterLists=[
-      new chapterList('プログラムで文字や数字を表示させよう','こんにちはキッズたち！プログラムがわからない君たちにこれからプログラミングを教えていくよ！まずは初歩の初歩、画面上に文字や数字を表示させることを教えるよ！'),
-      new chapterList('２','説明'),
-      new chapterList('３','説明')
-    ]
+    this.DataService.getChapterData().subscribe(data => {
+      this.chapterLists=data.data
+    })
   }
 
   openDetail(i): void {
@@ -33,10 +34,13 @@ export class ChapterComponent implements OnInit {
       this.log = result;
     });
   }
-
-}
-export class chapterList {
-  constructor(
-    public title:string,
-    public detail:string){}
+  icon_view(num){
+    var result:string
+    if (num.slice(-2)<10){
+      result=num.slice(-1)
+    }else{
+      result=num
+    }
+    return result
+  }
 }
