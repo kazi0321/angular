@@ -20,6 +20,7 @@ import { ChapterComponent } from './chapter/chapter.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { TutorModule } from './tutor/tutor.module';
 import { CustomTextareaModule } from './edita/custom-textarea/custom-textarea.module';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { CustomTextareaModule } from './edita/custom-textarea/custom-textarea.mo
     MatMenuModule,
     TutorModule,
     HttpClientModule,
-    CustomTextareaModule
+    CustomTextareaModule,
+    MatDialogModule,
   ],
   bootstrap: [AppComponent],
   entryComponents: [],

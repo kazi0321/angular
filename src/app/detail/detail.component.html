@@ -1,10 +1,12 @@
 <div class="syou">
-  <p class="title">チャプタータイトル</p>
-  <p class="setumei">チャプター説明</p>
-  <div class="back">
-    <a routerLink="/chapter-list">戻る</a>
-  </div>
-  <div class="start">
-    <a routerLink="/core">開始</a>
+  <p class="title">{{data.title}}</p>
+  <p class="setumei">{{data.state}}</p>
+  <div mat-dialog-actions>
+    <div class="back">
+      <button mat-button (click)="onNoClick()">戻る</button>
+    </div>
+    <div class="start">
+      <button mat-button (click)="onNoClick()" routerLink="/core" cdkFocusInitial>開始</button>
+    </div>
   </div>
 </div>

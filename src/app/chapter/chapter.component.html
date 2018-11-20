@@ -1,3 +1,2 @@
-
-チャプター題名　説明
-<a routerLink="/chapter-detail">リンク</a>
+<button *ngFor="let chapterList of chapterLists;let i = index" mat-fab color="primary"
+ (click)="openDetail(i)">{{icon_view(chapterList["chapterID"])}}</button>

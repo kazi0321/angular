@@ -3,7 +3,6 @@ import { MatButtonModule } from '@angular/material';
 import { MatMenuModule } from '@angular/material/menu';
 import { LoginService } from '../login.service';
 import { HttpClient } from '@angular/common/http';
-import { menuList } from '../menu-list';
 
 @Component({
   selector: 'app-login-info',
@@ -12,31 +11,39 @@ import { menuList } from '../menu-list';
 })
 
 export class LoginInfoComponent implements OnInit {
+  user: string;
+  menuLists=[]
 
-user = "Guest"
-  menuLists = []
 
   constructor(private loginService: LoginService) { }
 
   ngOnInit() {
+    this.user = "Guest"
+    this.menuLists = []
 
     this.loginService.isLoggedIn().subscribe(data => {
       this.user = data.username
+      if (this.user == "Guest") {
+
+        this.menuLists = [
+        //new menuList('url','menutitle'),
+          new menuList('http://172.20.145.140/user/login', 'ログイン')
+        ]
+  
+      } else {
+  
+        this.menuLists = [
+        //new menuList('url','menutitle'),
+          new menuList('http://172.20.145.140/user/logout', 'ログアウト'),
+          new menuList('http://172.20.145.140/user/control','設定')
+        ]
+      }
     })
-
-    if (this.user == "Guest") {
-
-      this.menuLists = [
-      //new menuList('url','menutext'),
-        new menuList('http://172.20.145.140/user/login', 'ログイン')]
-
-    } else {
-
-      this.menuLists = [
-      //new menuList('url','menutext'),
-        new menuList('http://172.20.145.140/user/logout', 'ログアウト')]
-        
-    }
   }
 }
 
+export class menuList {
+  constructor(
+    public url:string,
+    public title:string){}
+}
