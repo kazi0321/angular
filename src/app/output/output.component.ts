@@ -1,4 +1,5 @@
 import { Component, OnInit, Testability } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 export interface Output {
   name: string,
@@ -15,19 +16,21 @@ export class OutputComponent implements OnInit {
   ];
 
   tests;
+  json_text
   value = 0;
   mode = "determinate";
-  constructor() { }
+  configUrl ="http://localhost:3000/quotes";
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
     // this.result();
   }
   result() {
     this.outputs = []; //一回空にする処理(出来ているのか怪しい)
-    let json_text = '{ "a" : 100, "b" : 200, "c" : 300 }';
-    this.tests = JSON.parse(json_text);
-    for (this.tests.key in this.tests) {
-      this.outputs.push({ name: this.tests[this.tests.key] });
+    this.json_text = this.http.get(this.configUrl);
+    this.json_text = JSON.parse(this.json_text);
+    for (this.json_text.key in this.json_text) {
+      this.outputs.push({ name: this.json_text[this.json_text.key] });
     }
   }
 }
