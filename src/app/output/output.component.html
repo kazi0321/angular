@@ -1,8 +1,9 @@
-<button (click)="result()" >実行</button>
+<button (click)="result()">実行</button>
 
 <div class=test>
-    <mat-progress-bar mode={{mode}}  value={{value}}></mat-progress-bar>
-    <p *ngFor="let output of outputs">{{output.name}}</p>
+    <mat-progress-bar mode={{mode}} value={{value}}></mat-progress-bar>
+    <p *ngFor="let output of outputs">{{output["name"]}}</p>
+    <!-- <p>{{outputs}}</p> -->
 </div>
 <!-- <div class=test *ngFor="let test of tests">
     <p>{{output.name}}</p>
