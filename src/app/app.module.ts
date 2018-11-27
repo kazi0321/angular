@@ -10,17 +10,22 @@ import { DefaultTipComponent } from './default-tip/default-tip.component';
 import { OutputComponent } from './output/output.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { AppRoutingModule } from './/app-routing.module';
-import { EditorModule } from './editor/editor.module';
 import { MaterialModule } from './material/material.module';
 import { SharedModule } from './shared/shared.module';
 import { UserTipComponent } from './user-tip/user-tip.component';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { HttpClientModule } from '@angular/common/http';
 
+import {
+  MatAutocompleteModule,
+  MatProgressBarModule,
+  MatDividerModule,
+} from '@angular/material';
+
+import { HttpClientModule } from '@angular/common/http';
+import { EditorModule } from './editor/editor.module';
+import { OperatorComponent } from './operator/operator.component';
 
 @NgModule({
   declarations: [
@@ -34,10 +39,10 @@ import { HttpClientModule } from '@angular/common/http';
     DefaultTipComponent,
     OutputComponent,
     UserTipComponent,
+    OperatorComponent,
   ],
   imports: [
     AppRoutingModule,
-    EditorModule,
     MaterialModule,
     SharedModule,
     MatChipsModule,
@@ -48,6 +53,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatAutocompleteModule,
     MatProgressBarModule,
     HttpClientModule,
+    EditorModule,
+    MatDividerModule,
   ],
   bootstrap: [AppComponent],
   entryComponents: [],

@@ -1,4 +1,17 @@
-<app-default-tip></app-default-tip>
-<app-user-tip></app-user-tip>
-<app-output></app-output>
+<div class="container">
+    <div class="top">
+        <app-editor></app-editor>
+        <mat-divider [vertical]="true"></mat-divider>
+        <app-default-tip></app-default-tip>
+        <mat-divider></mat-divider>
+        <app-user-tip></app-user-tip>
+    </div>
 
+    <mat-divider></mat-divider>
+
+    <div class="bottom">
+        <app-output></app-output>
+        <mat-divider [vertical]="true"></mat-divider>
+        <app-operator></app-operator>
+    </div>
+</div>
