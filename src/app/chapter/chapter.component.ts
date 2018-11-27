@@ -34,9 +34,10 @@ export class ChapterComponent implements OnInit {
       this.log = result;
     });
   }
-  
+
   icon_view(num){
     var result:string
+    
     if (num.slice(-2)<10){
       result=num.slice(-1)
     }else{
