@@ -27,15 +27,15 @@ export class LoginInfoComponent implements OnInit {
 
         this.menuLists = [
         //new menuList('url','menutitle'),
-          new menuList('http://172.20.145.140/user/login', 'ログイン')
+          new menuList('http://127.0.0.1/user/login', 'ログイン')
         ]
   
       } else {
   
         this.menuLists = [
         //new menuList('url','menutitle'),
-          new menuList('http://172.20.145.140/user/logout', 'ログアウト'),
-          new menuList('http://172.20.145.140/user/control','設定')
+          new menuList('http://127.0.0.1/user/logout', 'ログアウト'),
+          new menuList('http://127.0.0.1/user/control','設定')
         ]
       }
     })
