@@ -34,5 +34,9 @@ export class CodeService {
     this._indexWidthSubject.next(digit * 10);
   }
 
+  public toCode(): any {
+
+  }
+
   constructor() { }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CodeService } from '../editor/code.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-operator',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OperatorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private codeService: CodeService, private http: HttpClient) { }
 
   ngOnInit() {
+  }
+
+  run(): void {
+
   }
 
 }

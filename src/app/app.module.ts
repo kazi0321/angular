@@ -13,9 +13,9 @@ import { AppRoutingModule } from './/app-routing.module';
 import { MaterialModule } from './material/material.module';
 import { SharedModule } from './shared/shared.module';
 import { UserTipComponent } from './user-tip/user-tip.component';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 
 import {
   MatAutocompleteModule,
