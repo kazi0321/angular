@@ -25,7 +25,7 @@ import {
 
 import { HttpClientModule } from '@angular/common/http';
 import { EditorModule } from './editor/editor.module';
-import { OperatorComponent } from './operator/operator.component';
+import { OperatorComponent } from './editor/operator/operator.component';
 
 @NgModule({
   declarations: [

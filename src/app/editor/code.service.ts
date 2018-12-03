@@ -35,7 +35,13 @@ export class CodeService {
   }
 
   public toCode(): any {
-
+    return {
+      code: [
+        ['def printStack():\n'],
+        ['    for str in ["abc", "def", "ghi"]:\n'],
+        ['        print(str)']
+      ]
+    };
   }
 
   constructor() { }

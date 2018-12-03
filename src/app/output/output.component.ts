@@ -1,32 +1,33 @@
-import { Component, OnInit, Testability } from '@angular/core';
+import { Component, OnInit, Testability, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GetDataService } from '../get-data.service';
+import { RunService } from '../editor/run.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-output',
   templateUrl: './output.component.html',
   styleUrls: ['./output.component.css']
 })
-export class OutputComponent implements OnInit {
+export class OutputComponent implements OnInit, OnDestroy {
 
-  outputs = []
-  value = 0;
-  mode = "determinate";
-  configUrl = "http://localhost:3000/quotes";
+  outputs: string[] = [];
+  private sub: Subscription;
 
-  constructor(private http: HttpClient,
-    private getdataservice: GetDataService,
-  ) { }
+  constructor(private runService: RunService) { }
 
   ngOnInit() {
 
   }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+
   result() {
-    this.outputs = [];
-    this.getdataservice.getData().subscribe(data => {
-      this.outputs.push(data)
-      console.log(this.outputs)
-    })
+    this.sub = this.runService.result.subscribe(res => {
+      res.answer.forEach(str => this.outputs.push);
+    });
   }
 }
 
