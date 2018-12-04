@@ -5,7 +5,8 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatDividerModule,
-  MatMenuModule
+  MatMenuModule,
+  MatProgressBarModule,
 } from '@angular/material';
 
 import { OverlayModule } from '@angular/cdk/overlay';
@@ -20,6 +21,7 @@ import { PortalModule } from '@angular/cdk/portal';
     MatMenuModule,
     OverlayModule,
     PortalModule,
+    MatProgressBarModule,
   ],
   declarations: [],
   exports: [

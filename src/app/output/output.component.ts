@@ -2,7 +2,7 @@ import { Component, OnInit, Testability, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GetDataService } from '../get-data.service';
 import { RunService } from '../editor/run.service';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-output',
@@ -12,22 +12,23 @@ import { Subscription } from 'rxjs';
 export class OutputComponent implements OnInit, OnDestroy {
 
   outputs: string[] = [];
-  private sub: Subscription;
+  private _sub: Subscription;
+  private _progress: Observable<boolean> = of<boolean>(false);
 
   constructor(private runService: RunService) { }
 
   ngOnInit() {
-
+    this._sub = this.runService.result.subscribe(res => {
+      res.answer.forEach(str => this.outputs.push);
+    });
   }
 
   ngOnDestroy() {
-    this.sub.unsubscribe();
+    this._sub.unsubscribe();
   }
 
-  result() {
-    this.sub = this.runService.result.subscribe(res => {
-      res.answer.forEach(str => this.outputs.push);
-    });
+  get progress(): Observable<boolean> {
+    return this._progress;
   }
 }
 
