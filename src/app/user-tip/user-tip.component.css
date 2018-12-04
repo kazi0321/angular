@@ -9,18 +9,12 @@
 }
 .example-chip-list {
   width: 100%;
-  position: absolute;
-  top: 330px;
 }
 .chip-list{
   width: 100%;
   height: 100px;
 }
 #user-tip{
-  width: 30%;
-  height: 400px;
+  width: 100%;
   border: solid 1px black;
-  position: absolute;
-  top: 250px;
-  right: 5px;
 }

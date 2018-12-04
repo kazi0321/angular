@@ -1,9 +1,6 @@
 .test{
-  height: 210px;
-  width: 99%;
-  border: solid 1px black;
-  position: absolute;
-  top: 660px;
+  height: 100%;
+  width: 100%;
 }
 p{
   margin : 5px;

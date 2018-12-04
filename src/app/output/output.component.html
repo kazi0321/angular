@@ -1,8 +1,6 @@
-<div class=test>
-    <mat-progress-bar mode={{mode}} value={{value}}></mat-progress-bar>
-    <p *ngFor="let output of outputs">{{output["name"]}}</p>
-    <!-- <p>{{outputs}}</p> -->
+<div>
+    <mat-progress-bar mode="indeterminate" *ngIf="progress | async"></mat-progress-bar>
+    <div class="test">
+        <p *ngFor="let output of outputs">{{ output }}</p>
+    </div>
 </div>
-<!-- <div class=test *ngFor="let test of tests">
-    <p>{{output.name}}</p>
-</div> -->
