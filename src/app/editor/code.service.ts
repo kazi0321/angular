@@ -7,11 +7,9 @@ import { Observable, Subject } from 'rxjs';
 export class CodeService {
 
   private _text: string[][] = [
-    ['def', 'hellow_world:'],
-    ['  ', 'print("hello world")'],
-    ['あいうえお'],
-    ['123456'],
-    ['abcdefg'],
+    ['def', ' ', 'aaa(str):'],
+    ['  ', 'print', '(str)'],
+    ['aaa("hhh")']
   ];
 
   private _indexWidthSubject: Subject<number> = new Subject();
@@ -35,13 +33,13 @@ export class CodeService {
   }
 
   public toCode(): any {
-    return {
-      code: [
-        ['def printStack():\n'],
-        ['    for str in ["abc", "def", "ghi"]:\n'],
-        ['        print(str)']
-      ]
-    };
+    this._text.forEach(data => {
+      if (data[data.length] !== '\n') {
+        data.push('\n');
+      }
+    });
+    console.log(this._text);
+    return { python: this._text };
   }
 
   constructor() { }
