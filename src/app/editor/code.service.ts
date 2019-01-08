@@ -7,9 +7,15 @@ import { Observable, Subject } from 'rxjs';
 export class CodeService {
 
   private _text: string[][] = [
-    ['def', ' ', 'aaa(str):'],
-    ['  ', 'print', '(str)'],
-    ['aaa("hhh")']
+    ['class test:'],
+    ['  def aaa(self):'],
+    ['    print("aaaaaaaaaaaaaaaaa")'],
+    [],
+    ['bbb = test()'],
+    ['bbb.aaa()'],
+    [],
+    ['ccc = [i for i in range(5000)]'],
+    ['print(ccc)']
   ];
 
   private _indexWidthSubject: Subject<number> = new Subject();
