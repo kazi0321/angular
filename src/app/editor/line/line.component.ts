@@ -78,4 +78,8 @@ export class LineComponent implements OnInit, AfterViewInit {
     }
   }
 
+  onTab(): void {
+    console.log('on tab');
+  }
+
 }
